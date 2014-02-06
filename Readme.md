@@ -1,8 +1,6 @@
 Yeoman AngularJS Starter
 ============================
 
-_Note_: The new site at http://ace.c9.io contains all the info below along with an embedding guide and all the other resources you need to get started with Ace.
-
 A starter project for AngularJS with user authentication, a two-pane list and detail view.
 
 Features
