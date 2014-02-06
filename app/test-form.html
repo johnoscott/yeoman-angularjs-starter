@@ -1,0 +1,146 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Starter App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- endbuild -->
+</head>
+
+<!-- Define our AngularJS app with a fake backend so we can develop without a server
+        <body ng-app="webAppFakeBackend" ng-controller="MainCtrl">
+     or run as a normal app that can make calls to a backend server
+        <body ng-app="signupApp" ng-controller="MainCtrl">
+-- >
+<body ng-app="webAppFakeBackend" ng-controller="MainCtrl">
+
+<!-- Add your site or application content here -->
+<!--<div class="container" ng-view=""></div>-->
+
+<form action="server.cgi" method="post" enctype="multipart/form-data">
+    <input type="file" accept="image/*;capture=camera">
+</form>
+
+
+<hr>
+
+<a ng-click="prefill()" class="pull-right">Test User</a>
+
+
+<form name="form" class="form-horizontal" ng-submit="submit()" novalidate>
+
+    <!-- user.email -->
+    <div class="form-group" ng-class="{'has-error':form.email.$error.email}">
+        <label class="col-sm-2 control-label">Email</label>
+
+        <div class="col-sm-10">
+            <input type="email" name="email" class="form-control"
+                   ng-model="user.email" placeholder="Email" required="true">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Password</label>
+
+        <div class="col-sm-10">
+            <input type="password" name="password" class="form-control"
+                   ng-model="user.password" placeholder="Password" required="true">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">Date of birth</label>
+
+        <div class="col-sm-10">
+            <table class="form-inline">
+                <tr>
+                    <td ng-class="{'error': invalidHours}">
+                        <input type="number" class="form-control text-center"
+                               name="day"
+                               ng-model="user.dob.day" placeholder="DD" maxlength="2"
+                               ng-pattern="/^\d\d$/" required="true"
+                               ng-class="{'has-error':form.day.$error}">
+                    </td>
+                    <td>/</td>
+                    <td>
+                        <input type="number" class="form-control text-center"
+                               name="month"
+                               ng-model="user.dob.month" placeholder="MM" maxlength="2"
+                               ng-pattern="/^\d\d$/" required="true"
+                               ng-class="{'has-error':form.month.$error}">
+                    </td>
+                    <td>/</td>
+                    <td>
+                        <input type="number" class="form-control text-center"
+                               name="year"
+                               ng-model="user.dob.year" placeholder="YYYY" maxlength="4"
+                               ng-pattern="/(19|20)\d\d/" required="true"
+                               ng-class="{'has-error':form.year.$error}">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default btn-block"
+                    ng-class="{'btn-primary':form.$valid && form.$dirty}"
+                    ng-disabled="form.$invalid || form.$pristine"
+                    >Sign in
+            </button>
+        </div>
+    </div>
+
+    <p><a>Debug</a></p>
+
+    <div class="well" ng-show="false">
+        <pre>user:{{user|json}}</pre>
+        <pre>form.$valid = {{form.$valid|json}}</pre>
+        <pre>form.$dirty = {{form.$dirty|json}}</pre>
+        <pre>form.$pristine = {{form.$pristine|json}}</pre>
+
+        <pre>form.email.$error = {{form.email.$error|json}}</pre>
+        <pre>form.email.$error.email = {{form.email.$error.email|json}}</pre>
+        <pre>form.day.$error = {{form.day.$error|json}}</pre>
+    </div>
+
+    <a href="#/forgot">Forgotten Password ?</a>
+
+
+</form>
+
+
+<hr>
+
+
+<!-- build:js scripts/plugins.js -->
+<!--<script src="bower_components/jquery/jquery.js"></script>-->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/mainCtrl.js"></script>
+<script src="scripts/services/mock-web-services.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>

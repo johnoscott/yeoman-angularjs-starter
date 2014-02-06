@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Starter App</title>
+    <meta name="description" content="">
+
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- endbuild -->
+</head>
+
+<!-- Define our AngularJS app with a fake backend so we can develop without a server
+        <body ng-app="webAppFakeBackend" ng-controller="MainCtrl">
+     or run as a normal app that can make calls to a backend server
+        <body ng-app="signupApp" ng-controller="MainCtrl">
+-->
+<body ng-app="webAppFakeBackend" ng-controller="MainCtrl">
+
+<div class="container">
+
+    <ng-include src="'templates/nav-top.html'"></ng-include>
+
+    <!-- left nav and main content -->
+    <div class="row">
+
+        <!-- Left side Navigation Panel -->
+        <div class="col-md-3" ng-show="ui.panels.nav.show">
+            <ng-include src="'templates/nav-side.html'"></ng-include>
+        </div><!-- /col-xs-3 Navigation Panel -->
+
+        <!-- Main Content Panel -->
+        <div ng-class="{'col-md-3':ui.panels.nav.show, 'col-md-12':!ui.panels.nav.show}" >
+            <ng-view></ng-view> <!-- View content is injected here -->
+        </div><!-- /col-xs-9 -->
+
+    </div><!-- /row -->
+
+    <!-- footer -->
+    <ng-include src="'templates/footer.html'"></ng-include>
+
+</div><!-- /container -->
+
+<!-- END html content -------------------------------------------------------------------------------------------->
+
+<!-- build:js scripts/plugins.js -->
+<!--<script src="bower_components/jquery/jquery.js"></script>-->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/modules.js -->
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-mocks/angular-mocks.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/mainCtrl.js"></script>
+<script src="scripts/services/mock-web-services.js"></script>
+<script src="scripts/controllers/welcome.js"></script>
+<script src="scripts/controllers/login.js"></script>
+<!-- endbuild -->
+
+</body>
+</html>
