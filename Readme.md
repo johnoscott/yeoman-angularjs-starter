@@ -21,10 +21,15 @@ Install the pre-requisite tools :
 
 Then clone this repo, and run the following commands in a terminal
 
-```git clone https://github.com/johnoscott/yeoman-angularjs-starter
-   cd yeoman-angularjs-starter
+```sh
    npm install
    bower install
    grunt serve
 ```
 
+```sh
+git clone [git-repo-url] dillinger
+cd dillinger
+npm i -d
+mkdir -p public/files/{md,html,pdf}
+```
