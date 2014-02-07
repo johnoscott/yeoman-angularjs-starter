@@ -22,7 +22,7 @@ Install the pre-requisite tools :
 Then clone this repo, and run the following commands in a terminal
 
 ```sh
-git clone [git-repo-url] starter
+git clone https://github.com/johnoscott/yeoman-angularjs-starter starter
 cd starter
 npm install
 bower install
