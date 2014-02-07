@@ -22,14 +22,9 @@ Install the pre-requisite tools :
 Then clone this repo, and run the following commands in a terminal
 
 ```sh
-   npm install
-   bower install
-   grunt serve
-```
-
-```sh
-git clone [git-repo-url] dillinger
-cd dillinger
-npm i -d
-mkdir -p public/files/{md,html,pdf}
+git clone [git-repo-url] starter
+cd starter
+npm install
+bower install
+grunt serve
 ```
