@@ -1,0 +1,155 @@
+
+
+<h1>Drop-Downs</h1>
+<button type="button" class="btn btn-lg btn-primary" data-animation="am-flip-x" bs-dropdown="dropdown">
+    Show Drop-Down
+</button>
+
+<!------------------------------------------------------------------------------------>
+
+<h1>Popovers</h1>
+<button type="button" class="btn btn-lg btn-primary" data-placement="right" data-animation="am-flip-x" bs-popover="popover">
+   Show Popover
+</button>
+
+<!------------------------------------------------------------------------------------>
+
+<h1>Tooltips</h1>
+<!-- Markup for a default tooltip with a scope passed as an object {title:''} -->
+<p>Tight pants next level keffiyeh <a href data-animation="am-flip-x" bs-tooltip="tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown.</p>
+
+<div class="input-group col-xs-5">
+  <span class="input-group-btn">
+    <!-- You can also use data-attrs to assign scope variables -->
+    <button class="btn btn-primary" type="button" data-trigger="click" data-type="success" title="{{tooltip.title}}" bs-tooltip="tooltip">Click me</button>
+  </span>
+    <input type="text" class="form-control" data-placement="right" data-type="info" data-container="body" placeholder="Focus to toggle tooltip" data-trigger="focus" bs-tooltip="tooltip">
+</div>
+<div class="checkbox">
+    <label data-placement="bottom" data-type="info" data-animation="am-fade-and-scale" bs-tooltip="tooltip">
+        <input type="checkbox" ng-model="tooltip.checked"> Remember me
+    </label>
+</div>
+<!------------------------------------------------------------------------------------>
+
+<h1>Time Pickers</h1>
+<form name="timepickerForm" class="form-inline" role="form">
+
+    <!-- Basic example -->
+    <div class="form-group" ng-class="{'has-error': timepickerForm.time.$invalid}">
+        <label class="control-label"><i class="fa fa-clock-o"></i> Time <small>(as date)</small></label>
+        <input type="text" class="form-control" size="8" ng-model="time" name="time" bs-timepicker>
+    </div>
+
+    <!-- Custom example -->
+    <div class="form-group" ng-class="{'has-error': timepickerForm.time2.$invalid}">
+        <label class="control-label"><i class="fa fa-clock-o"></i> Time <small>(as number)</small></label>
+        <input type="text" class="form-control" size="5" ng-model="selectedTimeAsNumber" data-time-format="HH:mm" data-time-type="number" data-min-time="10:00" data-max-time="13:30" data-autoclose="1" name="time2" bs-timepicker>
+    </div>
+    <hr>
+
+    <!-- Datetime example -->
+    <div class="form-group">
+        <label class="control-label"><i class="fa fa-calendar"></i> Datetime picker</label><br>
+        <div class="form-group">
+            <input type="text" size="10" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Date" bs-datepicker>
+        </div>
+        <div class="form-group">
+            <input type="text" size="8" class="form-control" ng-model="sharedDate" data-autoclose="1" placeholder="Time" bs-timepicker>
+        </div>
+    </div>
+
+</form>
+<!------------------------------------------------------------------------------------>
+
+
+<h1>Date Pickers</h1>
+<form name="datepickerForm" class="form-inline" role="form">
+    <!-- Basic example -->
+    <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
+        <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as date)</small></label>
+        <input type="text" class="form-control" ng-model="selectedDate" name="date" bs-datepicker>
+    </div>
+    <!-- Custom example -->
+    <div class="form-group" ng-class="{'has-error': datepickerForm.date2.$invalid}">
+        <label class="control-label"><i class="fa fa-calendar"></i> Date <small>(as number)</small></label>
+        <input type="text" class="form-control" ng-model="selectedDateAsNumber" data-date-format="yyyy-MM-dd" data-date-type="number" data-min-date="02/10/86" data-max-date="today" data-autoclose="1" name="date2" bs-datepicker>
+    </div>
+    <hr>
+    <!-- Date range example -->
+    <div class="form-group">
+        <label class="control-label"><i class="fa fa-calendar"></i> <i class="fa fa-arrows-h"></i> <i class="fa fa-calendar"></i> Date range <small>(dynamic)</small></label><br>
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="From" bs-datepicker>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Until" bs-datepicker>
+        </div>
+    </div>
+</form>
+<!------------------------------------------------------------------------------------>
+
+<h1>Selects</h1>
+<label>Single select:&nbsp;</label>
+<button type="button" class="btn btn-default" ng-model="selectedIcon" data-html="1" ng-options="icon.value as icon.label for icon in icons" bs-select>
+    Action <span class="caret"></span>
+</button>
+<hr>
+<label>Multiple select:&nbsp;</label>
+<button type="button" class="btn btn-default" ng-model="selectedIcons" data-html="1" data-multiple="1" data-animation="am-flip-x" ng-options="icon.value as icon.label for icon in icons" bs-select>
+    Action <span class="caret"></span>
+</button>
+
+
+<h1>Modal</h1>
+<button type="button" class="btn btn-lg btn-primary" data-animation="am-fade-and-scale" data-placement="center" bs-modal="modal">
+    Show Modal
+</button>
+
+<!-- You can use a custom html template with the `data-template` attr -->
+<!--<button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template="templates/demo-modal.html" bs-modal="modal">Custom Modal-->
+    <!--<br>-->
+    <!--<small>(using data-template)</small>-->
+<!--</button>-->
+
+<h1>Asides</h1>
+        <p>Asides are custom panels, drawers that inherit the behavior of modals.</p>
+<!-- Button to trigger a default aside with a scope as an object {title:'', content:'', etc.} -->
+<button type="button" class="btn btn-lg btn-primary" bs-aside="aside">Show Aside</button>
+
+<h1>Alert</h1>
+        <p>Alerts pop-up in the page and then dissapear.</p>
+<button type="button" class="btn btn-lg btn-primary" data-placement="top-right" data-container="body" data-duration="3" bs-alert="alert">
+    Show Alert
+</button>
+
+<h1>Buttons</h1>
+<pre class="bs-example-scope ng-binding">{{button|json}}
+};</pre>
+
+
+<label>Toggle:</label>
+<button type="button" class="btn btn-default" ng-model="button.toggle" bs-checkbox>Toggle</button>
+<!-- You can also use custom values with the `data-true-value` & `data-false-value` attributes -->
+
+<hr><label>Checkboxes:</label>
+<div class="btn-group" ng-model="button.checkbox" bs-checkbox-group>
+    <label class="btn btn-default"><input type="checkbox" value="left"> Left</label>
+    <label class="btn btn-default"><input type="checkbox" value="middle"> Middle</label>
+    <label class="btn btn-default"><input type="checkbox" value="right"> Right</label>
+    <!-- Children get compiled by `bs-checkbox-group` to :
+    <label class="btn btn-default"><input type="checkbox" value="left" ng-model="button.checkbox.left" bs-checkbox> Left</label>
+    ...
+    -->
+</div>
+
+<hr><label>Radios:</label>
+<div class="btn-group" ng-model="button.radio" bs-radio-group>
+    <label class="btn btn-default"><input type="radio" class="btn btn-default" value="0"> First</label>
+    <label class="btn btn-default"><input type="radio" class="btn btn-default" value="1"> Second</label>
+    <label class="btn btn-default"><input type="radio" class="btn btn-default" value="2"> Third</label>
+    <!-- Children get compiled by `bs-radio-group` to :
+    <label class="btn btn-default"><input type="radio" class="btn btn-default" value="left" ng-model="button.radio" bs-radio> Left</label>
+    ...
+    -->
+</div>

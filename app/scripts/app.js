@@ -4,7 +4,9 @@ angular.module('starterApp', [
 		'ngCookies',
 		'ngResource',
 		'ngSanitize',
-		'ngRoute'
+		'ngRoute',
+		'ngAnimate',
+		'mgcrea.ngStrap'
 	])
 	.config(function ($routeProvider, $httpProvider) {
 
@@ -21,6 +23,10 @@ angular.module('starterApp', [
 			  templateUrl: 'views/login.html',
 			  controller: 'LoginCtrl'
 			})
+.when('/widgets', {
+  templateUrl: 'views/widgets.html',
+  controller: 'WidgetsCtrl'
+})
 			.otherwise({
 				redirectTo: '/'
 			});

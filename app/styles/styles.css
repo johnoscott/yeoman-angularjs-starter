@@ -13,3 +13,12 @@ body {
     /* Top Navbar padding */
     /*margin-bottom: 20px;*/
 }
+
+/*Buttons in nav bars*/
+.navbar-nav > li > button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: transparent;
+    color: #777777;
+
+}

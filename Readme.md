@@ -8,7 +8,7 @@ Features
 
 * Two-pane view with navbar
 * Fake back-end (using ng-mock) that lets you build out your back-end API without a server.
-* Bootstrap3 comes to life with Angular Bootstrap
+* Bootstrap3 comes to life with Angular Strap and Font Awesome
 * no jQuery !
 
 Getting Started
