@@ -1,5 +1,26 @@
 
 
+<h1>Tabs</h1>
+<!-- ngModel is optional -->
+<div class="well">
+    <div ng-model="tabs.activeTab" bs-tabs="tabs">
+    </div>
+</div>
+
+<!------------------------------------------------------------------------------------>
+
+
+<h1>Type Ahead</h1>
+<form class="form-inline" role="form">
+    <div class="form-group">
+        <label><i class="fa fa-globe"></i> USA State</label>
+        <input type="text" class="form-control" ng-model="selectedState" ng-options="state for state in states" placeholder="Enter state" bs-typeahead>
+    </div>
+</form>
+
+<!------------------------------------------------------------------------------------>
+
+
 <h1>Drop-Downs</h1>
 <button type="button" class="btn btn-lg btn-primary" data-animation="am-flip-x" bs-dropdown="dropdown">
     Show Drop-Down

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('starterApp')
-  .controller('MainCtrl', function ($scope, $log, $resource, $window, $http) {
+  .controller('MainCtrl', function ($scope, $log, $resource, $window, $http, $alert, $modal) {
 
         $log.info("MainCtrl init");
 
@@ -25,8 +25,12 @@ angular.module('starterApp')
 				"href": "#anotherAction"
 			},
 			{
-				"text": "Something else here",
-				"click": "$alert('working ngClick!')"
+				"text": "Alert",
+				"click": "testAlert()"
+			},
+			{
+				"text": "Modal",
+				"click": "testModal()"
 			},
 			{
 				"divider": true
@@ -36,6 +40,20 @@ angular.module('starterApp')
 				"href": "#separatedLink"
 			}
 		];
+
+		$scope.testAlert = function() {
+			$log.info("testAlert");
+			var alert = $alert({title: 'Warning', content: 'I think you left the iron on.',
+				placement: 'top', type: 'danger', show: true});
+		}
+
+		$scope.testModal = function() {
+			$log.info("testModal");
+			var alert = $modal({title: 'Warning', content: 'I think you left the iron on.',
+				placement: 'top', animation: 'am-fade-and-scale', show: true});
+		}
+
+
 
 
 
